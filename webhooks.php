@@ -49,4 +49,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "events";
+print_r($events['events']);
