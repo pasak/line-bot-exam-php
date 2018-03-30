@@ -40,15 +40,15 @@ if (!is_null($events['events'])) {
 //       $text = file_get_contents($url, false, stream_context_create($arrContextOptions));
       $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
-      $message = json_decode($json,true);
+      $jsonObject = json_decode($json,true);
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-// 			$messages = [
-// 				'type' => 'text',
-// 				'text' => $text
-// 			];
+ 			$messages = [
+				'type' => 'text',
+				'text' => 'type ' . $jsonObject['type']
+			];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
