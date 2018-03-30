@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] .
              '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] .
-             '&Text=' . urlencode(utf8_encode($event['message']['text']));
+             '&Text=' . urlencode($event['message']['text']);
 
       $text = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
