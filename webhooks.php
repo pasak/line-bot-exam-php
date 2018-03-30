@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
 
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
-
+/*
       $url = 'https://tripmaster.co/ajax/line.php?Token=ChIJy1naz5o62jARbsePVZKbV78' .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] .
@@ -38,14 +38,16 @@ if (!is_null($events['events'])) {
              '&Text=' . urlencode($event['message']['text']);
 
       $text = file_get_contents($url, false, stream_context_create($arrContextOptions));
-
+*/
+      $text = 'https://tripmaster.co/ajax/line.php?Token=ChIJy1naz5o62jARbsePVZKbV78' .
+             '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID ;
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "$url \n $text"
+				'text' => $text
 			];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
