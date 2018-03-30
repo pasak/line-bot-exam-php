@@ -6,6 +6,13 @@ require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 // $access_token = '3ALKAbKFoGuJyJnoDdn0HeyfbxLFtEXBKiC0lFeoNl/XbL4WhoCZzefp2n7UDuXaCWfErIDro07BnZNggJmXJChXTIlMPo8LRJ+n1LEgbRUaKehDkiCr5p5CakHrPX+gauOGX/R5bB2e5yi7xjnHDAdB04t89/1O/w1cDnyilFU=';
 $access_token = '0zhyZeKzFbPrHc3wsukcNfHJngX61gJnyJBjCAMdiZGlro3eJFu3s4eP1FM3t9psiiHlnZYG2FgRgmgIOFMK0HiPcFTxXshD9eN3Ir+rNe1Cci10aV5Y1pDJPvBvPHoNKXDDxcQT9VXotv9vcpzoDgdB04t89/1O/w1cDnyilFU=';
 	
+$arrContextOptions=array(
+      "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+        ),
+    );
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -18,9 +25,14 @@ if (!is_null($events['events'])) {
 
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['source']['userId'];
-			
-			$text = 'userId ' . $event['source']['userId'] . ' message ' . $event['message']['text'];
+// 			$text = $event['source']['userId'];
+// 			$text = 'userId ' . $event['source']['userId'] . ' message ' . $event['message']['text'];
+
+		      // pass and get value from TripMaster.co
+
+		      $url = 'https://tripmaster.co/ajax/line.php?UserID='. $event['source']['userId'] . '&Message=' . $event['message']['text'];
+
+		      $text = file_get_contents($url, false, stream_context_create($arrContextOptions));
 			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
