@@ -49,10 +49,10 @@ if (!is_null($events['events'])) {
       // Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 
-      foreach ($messages as $message) {
+//       foreach ($messages as $message) {
   			$data = [
   				'replyToken' => $replyToken,
-  				'messages' => [$message],
+  				'messages' => $messages,
   			];
   			$post = json_encode($data);
   			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -66,6 +66,6 @@ if (!is_null($events['events'])) {
   			curl_close($ch);
   			echo $result . "\r\n";
 		  }
-	}
+// 	}
 }
 echo "OK";
