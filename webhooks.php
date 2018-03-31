@@ -49,7 +49,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 			];
-/*
+
       $messages = [
 				'type' => 'template',
 				'template' => [
@@ -59,13 +59,19 @@ if (!is_null($events['events'])) {
             [
               "thumbnailImageUrl" => "http://postfiles8.naver.net/MjAxODAxMjRfMTg2/MDAxNTE2NzgwMDEyMTYw.5FIcKqzP0B5Cf3o0yd8DXX2lpI0WXQ4uEP6rSnOe0Pgg.oWHdoV_QXXes9SctFAz6Venn-mfxUlaQZapF9gyyhwMg.JPEG.destroyerx/spaghetti-1987454_1920.jpg?type=w2",
               "title"             => "                     Pasta",
-              "text"              => "        Choose the menu below"
-
+              "text"              => "        Choose the menu below",
+		'actions'           => [
+		  [
+		    "type"  => "message",
+		    "label" => "Tomato Pasta",
+		    "text"  => "Tomato Pasta"
+		  ]
+		]
             ]
           ]
         ]
 	];
-*/
+
 		// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
