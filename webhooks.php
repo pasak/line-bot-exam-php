@@ -58,7 +58,7 @@ $messages = [
     'type'      => 'carousel',
     'columns'   => [
       [
-        "thumbnailImageUrl" => "http://postfiles8.naver.net/MjAxODAxMjRfMTg2/MDAxNTE2NzgwMDEyMTYw.5FIcKqzP0B5Cf3o0yd8DXX2lpI0WXQ4uEP6rSnOe0Pgg.oWHdoV_QXXes9SctFAz6Venn-mfxUlaQZapF9gyyhwMg.JPEG.destroyerx/spaghetti-1987454_1920.jpg?type=w2",
+        "thumbnailImageUrl" => "https://tripmaster.co/images/sample-tour-program/1/11s.jpg",
         "title"             => "                     Pasta",
         "text"              => "        Choose the menu below",
         'actions'           => [
