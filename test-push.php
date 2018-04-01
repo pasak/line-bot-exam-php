@@ -2,7 +2,7 @@
 $access_token = '0zhyZeKzFbPrHc3wsukcNfHJngX61gJnyJBjCAMdiZGlro3eJFu3s4eP1FM3t9psiiHlnZYG2FgRgmgIOFMK0HiPcFTxXshD9eN3Ir+rNe1Cci10aV5Y1pDJPvBvPHoNKXDDxcQT9VXotv9vcpzoDgdB04t89/1O/w1cDnyilFU=';
 
 $messages = [
-  ["type"=>"text","text"=>"ดูโปรแกรม ดอยอินทนนท์, ขุนวาง, ดอยสุเทพ, ดอยปุย\nวันที่ 1"],
+  ["type"=>"text","text"=>"ดูโปรแกรม ดอยอินทนนท์, ขุนวาง, ดอยสุเทพ, ดอยปุย วันที่ 1"],
   [
     "type"=>"template",
     "altText"=>"สถานที่ท่องเที่ยว วันที่ 1",
