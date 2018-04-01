@@ -12,6 +12,7 @@ $messages = [
         [
           "thumbnailImageUrl"=>"https://tripmaster.co/images/attraction/1/s/10.jpg",
           "title"=>"ดอยอินทนนท 3 ชม.",
+          "text"=>"ดอยอินทนนท",
           "actions"=>[
             ["type"=>"message","label"=>"ดูรูปเพิ่มเติม","text"=>"ดูรูปเพิ่มเติม ดอยอินทนนท์"]
           ]
@@ -19,6 +20,7 @@ $messages = [
         [
           "thumbnailImageUrl"=>"https://tripmaster.co/images/attraction/11/s/110.jpg",
           "title"=>"ขุนวาง 2 ชม.",
+          "text"=>"ขุนวาง",
           "actions"=>[
             ["type"=>"message","label"=>"ดูรูปเพิ่มเติม","text"=>"ดูรูปเพิ่มเติม ขุนวาง"]
           ]
