@@ -1,28 +1,9 @@
 <?php
 $access_token = '0zhyZeKzFbPrHc3wsukcNfHJngX61gJnyJBjCAMdiZGlro3eJFu3s4eP1FM3t9psiiHlnZYG2FgRgmgIOFMK0HiPcFTxXshD9eN3Ir+rNe1Cci10aV5Y1pDJPvBvPHoNKXDDxcQT9VXotv9vcpzoDgdB04t89/1O/w1cDnyilFU=';
 
-      $messages = [
-				'type' => 'template',
-        "altText"   => "this is a carousel template",
-				'template' => [
-          'type'      => 'carousel',
-          // 'actions'   => [],
-          'columns'   => [
-            [
-              "thumbnailImageUrl" => "https://tripmaster.co/images/sample-tour-program/1/11s.jpg",
-              "title"             => "                     Pasta",
-              "text"              => "        Choose the menu below",
-              'actions'           => [
-                [
-                  "type"  => "message",
-                  "label" => "Tomato Pasta",
-                  "text"  => "Tomato Pasta"
-                ]
-              ]
-            ]
-          ]
-        ]
-			];
+$json = '[{"type":"text","text":"ดูโปรแกรม ดอยอินทนนท์, ขุนวาง, ดอยสุเทพ, ดอยปุย\nวันที่ 1"},{"type":"template","altText":"สถานที่ท่องเที่ยว วันที่ 1","template":{"type":"carousel","columns":[{"thumbnailImageUrl":"https:\/\/tripmaster.co\/images\/attraction\/1\/s\/10.jpg","title":"ดอยอินทนนท 3 ชม.","actions":{"type":"message","label":"ดูรูปเพิ่มเติม","text":"ดูรูปเพิ่มเติม ดอยอินทนนท์"}},{"thumbnailImageUrl":"https:\/\/tripmaster.co\/images\/attraction\/11\/s\/110.jpg","title":"ขุนวาง 2 ชม.","actions":{"type":"message","label":"ดูรูปเพิ่มเติม","text":"ดูรูปเพิ่มเติม ขุนวาง"}}]}}]';
+
+$messages = json_decode($json,true);
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/push';
