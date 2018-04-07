@@ -1,7 +1,7 @@
 <?php
 $access_token = '0zhyZeKzFbPrHc3wsukcNfHJngX61gJnyJBjCAMdiZGlro3eJFu3s4eP1FM3t9psiiHlnZYG2FgRgmgIOFMK0HiPcFTxXshD9eN3Ir+rNe1Cci10aV5Y1pDJPvBvPHoNKXDDxcQT9VXotv9vcpzoDgdB04t89/1O/w1cDnyilFU=';
 
-$json = '[{"type":"template","altText":"รายชื่อโรงแรม 1","template":{"type":"carousel","columns":[{"thumbnailImageUrl":"https:\/\/tripmaster.co\/upload\/hotel\/logo\/1.jpg","title":"โรงแรมตัวอย่าง","text":"ราคาเริ่มต้น 2,001 บาท","actions":[{"type":"message","label":"VIEW","text":"ดูห้องพัก โรงแรมตัวอย่าง เมืองเชียงใหม่"}]}]}}]';
+$json = '[{"type":"template","altText":"ดูห้องพัก โรงแรมตัวอย่าง เมืองเชียงใหม่ 1","template":{"type":"carousel","columns":[{"thumbnailImageUrl":"https:\/\/tripmaster.co\/upload\/hotel\/room\/9.png","title":"ดีลักซ์ ดับเบิล","text":"ราคาเริ่มต้น 2,354 บาท","actions":[{"type":"message","label":"ดูราคา","text":"ดูราคา ดีลักซ์ ดับเบิล"},{"type":"message","label":"ดูรายละเอียดห้องพัก","text":"ดูรายละเอียดห้องพัก ดีลักซ์ ดับเบิล"}]},{"thumbnailImageUrl":"https:\/\/tripmaster.co\/upload\/hotel\/room\/1.png","title":"ดีลักซ์ ทวิน","text":"ราคาเริ่มต้น 3,531 บาท","actions":[{"type":"message","label":"ดูราคา","text":"ดูราคา ดีลักซ์ ทวิน"},{"type":"message","label":"ดูรายละเอียดห้องพัก","text":"ดูรายละเอียดห้องพัก ดีลักซ์ ทวิน"}]}]}}]';
 
 $messages = json_decode($json,true);
 			// Make a POST Request to Messaging API to reply to sender
