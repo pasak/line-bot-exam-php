@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
 
-      $url = 'https://tripmaster.co/ajax/line.php?Token=ChIJy1naz5o62jARbsePVZKbV78' .
+      $url = 'https://tripmaster.co/ajax/hotel-manager-reply.php?Token=ChIJy1naz5o62jARbsePVZKbV78' .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] .
              '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] .
