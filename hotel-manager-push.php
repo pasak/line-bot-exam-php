@@ -12,7 +12,7 @@ $messages = json_decode($json,true);
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$data = [
 				'to' => 'U89c37c01fe7219f134382e1dc7e896ba',
-				'messages' => [$messages],
+				'messages' => $messages,
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
