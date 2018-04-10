@@ -3,8 +3,8 @@ require "vendor/autoload.php";
 
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
-//$access_token = 'KYJc8n+UE8YPsIa2qDo5hVNQ0u2JQ1Cy4tEW1qIRg1i4r+bgoy/xfDfdXQypmoVaBmHixhavlpkc3b7KX+648A9Fu3DrdxX1NeoEzjU9uWqn9vFwwaoFkUlQlZEbJW3tR5jsg7UPa+wTuTxU/PAVTAdB04t89/1O/w1cDnyilFU=';
-$access_token = 'nYlB+5Il9ueHsPCsFbWH7ZIftDPAL2eIoM/dslp5y/lx7NwJrE4Y/gplCmDBjd0X1HQikBdvxewg9HjeDVsCjxkONyg6HDzUVid1n7feCcJ0fUbEdUDW8fSJ/gbVv9jioZVaMmb4Sup/uINcAlaZpwdB04t89/1O/w1cDnyilFU=';
+$access_token = 'KYJc8n+UE8YPsIa2qDo5hVNQ0u2JQ1Cy4tEW1qIRg1i4r+bgoy/xfDfdXQypmoVaBmHixhavlpkc3b7KX+648A9Fu3DrdxX1NeoEzjU9uWqn9vFwwaoFkUlQlZEbJW3tR5jsg7UPa+wTuTxU/PAVTAdB04t89/1O/w1cDnyilFU=';
+// $access_token = 'nYlB+5Il9ueHsPCsFbWH7ZIftDPAL2eIoM/dslp5y/lx7NwJrE4Y/gplCmDBjd0X1HQikBdvxewg9HjeDVsCjxkONyg6HDzUVid1n7feCcJ0fUbEdUDW8fSJ/gbVv9jioZVaMmb4Sup/uINcAlaZpwdB04t89/1O/w1cDnyilFU=';
 
 $arrContextOptions=array(
       "ssl"=>array(
