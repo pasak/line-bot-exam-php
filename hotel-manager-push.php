@@ -1,5 +1,6 @@
 <?php
 $access_token = 'KYJc8n+UE8YPsIa2qDo5hVNQ0u2JQ1Cy4tEW1qIRg1i4r+bgoy/xfDfdXQypmoVaBmHixhavlpkc3b7KX+648A9Fu3DrdxX1NeoEzjU9uWqn9vFwwaoFkUlQlZEbJW3tR5jsg7UPa+wTuTxU/PAVTAdB04t89/1O/w1cDnyilFU=';
+$access_token = 'nYlB+5Il9ueHsPCsFbWH7ZIftDPAL2eIoM/dslp5y/lx7NwJrE4Y/gplCmDBjd0X1HQikBdvxewg9HjeDVsCjxkONyg6HDzUVid1n7feCcJ0fUbEdUDW8fSJ/gbVv9jioZVaMmb4Sup/uINcAlaZpwdB04t89/1O/w1cDnyilFU=';
 
 //$json = '[{"type":"template","altText":"รายชื่อโรงแรม 1","template":{"type":"carousel","columns":[{"thumbnailImageUrl":"https:\/\/tripmaster.co\/upload\/hotel\/logo\/1.jpg","title":"โรงแรมตัวอย่าง","text":"ราคาเริ่มต้น 2,001 บาท","actions":[{"type":"message","label":"VIEW","text":"ดูห้องพัก โรงแรมตัวอย่าง เมืองเชียงใหม่"}]}]}}]';
 $json = '[{'type' => 'text','text' => 'Hotel Manger'}]';
