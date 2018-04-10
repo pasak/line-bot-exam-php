@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
 
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
-/*
+
       $url = 'https://tripmaster.co/line/hotel-manager-reply.php?Token=ChIJy1naz5o62jARbsePVZKbV78' .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] .
@@ -33,8 +33,8 @@ if (!is_null($events['events'])) {
       $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
       $messages = json_decode($json,true);
-*/
-    $messages = array(['type' => 'text','text' => $event['source']['userId']]);
+
+//    $messages = array(['type' => 'text','text' => $event['source']['userId']]);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
