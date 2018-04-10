@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
       $messages = json_decode($json,true);
 */
       $messages = array(
-    		['type' => 'text','text' => 'Hotel Manger']
+    		['type' => 'text','text' => $event['source']['userId']]
     	);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
