@@ -33,6 +33,8 @@ if (!is_null($events['events'])) {
 
       $messages = json_decode($json,true);
 
+  $messages = array(['type' => 'text','text' => 'Tourist Reply);
+
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
