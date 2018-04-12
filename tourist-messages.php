@@ -21,6 +21,9 @@ curl_close($ch);
 $data = base64_decode($result);
 
 $im = imagecreatefromstring($data);
+
+print_r($im);
+
 if ($im !== false) {
     header('Content-Type: image/png');
     imagepng($im);
