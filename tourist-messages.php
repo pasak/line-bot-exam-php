@@ -17,5 +17,17 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 $result = curl_exec($ch);
 curl_close($ch);
-echo $result . "\r\n";
+
+$data = base64_decode($result);
+
+$im = imagecreatefromstring($data);
+if ($im !== false) {
+    header('Content-Type: image/png');
+    imagepng($im);
+    imagedestroy($im);
+}
+else {
+    echo 'An error occurred.';
+}
+// echo $result . "\r\n";
 ?>
