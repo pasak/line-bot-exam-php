@@ -22,7 +22,7 @@ $data = base64_decode($result);
 
 $im = imagecreatefromstring($data);
 
-print_r($im);
+echo $im . "\r\n";
 
 if ($im !== false) {
     header('Content-Type: image/png');
