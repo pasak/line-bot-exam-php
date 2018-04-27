@@ -3,7 +3,7 @@
 // require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 $access_token = str_replace(' ','+',$_REQUEST['Token']);
 
-echo '$access_token ', $access_token;
+// echo '$access_token ', $access_token;
 
 $arrContextOptions=array(
       "ssl"=>array(
@@ -16,9 +16,9 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
-// if (!is_null($events['events'])) {
+if (!is_null($events['events'])) {
 	// Loop through each event
-// 	foreach ($events['events'] as $event) {
+	foreach ($events['events'] as $event) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
       $url = 'https://tripmaster.co/line/provider-reply.php?Token=' . $access_token .
@@ -50,6 +50,6 @@ $events = json_decode($content, true);
   			curl_close($ch);
   			echo $result . "\r\n";
 		  // }
-// 	}
-// }
-// echo "OK";
+	}
+}
+echo "OK";
