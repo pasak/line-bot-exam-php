@@ -14,9 +14,9 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
-if (!is_null($events['events'])) {
+// if (!is_null($events['events'])) {
 	// Loop through each event
-	foreach ($events['events'] as $event) {
+// 	foreach ($events['events'] as $event) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
       $url = 'https://tripmaster.co/line/provider-reply.php?Token=' . $access_token .
@@ -48,6 +48,6 @@ if (!is_null($events['events'])) {
   			curl_close($ch);
   			echo $result . "\r\n";
 		  // }
-	}
-}
-echo "OK";
+// 	}
+// }
+// echo "OK";
