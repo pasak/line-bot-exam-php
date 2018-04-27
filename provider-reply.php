@@ -1,7 +1,9 @@
 <?php // callback.php
 // require "vendor/autoload.php";
 // require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
-$access_token = str_replace(' ','+',$_REQUEST['Token']);
+// $access_token = str_replace(' ','+',$_REQUEST['Token']);
+$access_token = 'TM4mFmMA3jm4rYTSd4ZSl+V4Pj3Jus+qNi4H1RZAIJELfF5JFahiH1Mw+8W5qfEznMozstz4Nw0hE4tPGVfpJwAUrDdxU6XgXBHvdudmWIVTkZLqpSuTjZUmC+oeDsWCJ2d4Rc6LpwC95sS2zFkYuAdB04t89/1O/w1cDnyilFU=';
+
 
 // echo '$access_token ', $access_token;
 
