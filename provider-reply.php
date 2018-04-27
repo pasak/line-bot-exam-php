@@ -1,7 +1,7 @@
 <?php // callback.php
 // require "vendor/autoload.php";
 // require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
-$access_token = $_REQUEST['Token'];
+$access_token = str_replace(' ','+',$_REQUEST['Token']);
 
 echo '$access_token ', $access_token;
 
