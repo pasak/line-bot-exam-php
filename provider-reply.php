@@ -3,6 +3,8 @@
 // require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 $access_token = $_REQUEST['Token'];
 
+echo '$access_token ', $access_token;
+
 $arrContextOptions=array(
       "ssl"=>array(
             "verify_peer"=>false,
