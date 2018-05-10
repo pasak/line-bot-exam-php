@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
       $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
       $messages = json_decode($json,true);
-    $messages = array(['type' => 'text','text' => $url]);
+//     $messages = array(['type' => 'text','text' => $url]);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
