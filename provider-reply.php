@@ -5,7 +5,7 @@ $access_token = str_replace(' ','+',$_REQUEST['Token']);
 // $access_token = 'TM4mFmMA3jm4rYTSd4ZSl+V4Pj3Jus+qNi4H1RZAIJELfF5JFahiH1Mw+8W5qfEznMozstz4Nw0hE4tPGVfpJwAUrDdxU6XgXBHvdudmWIVTkZLqpSuTjZUmC+oeDsWCJ2d4Rc6LpwC95sS2zFkYuAdB04t89/1O/w1cDnyilFU=';
 
 
-// echo '$access_token ', $access_token;
+echo '$access_token ', $access_token;
 
 $arrContextOptions=array(
       "ssl"=>array(
@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
              '&Text=' . urlencode($event['message']['text']);
       $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
       $messages = json_decode($json,true);
-//       $messages = array(['type' => 'text','text' => $url]);
+      $messages = array(['type' => 'text','text' => $url]);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
       // Make a POST Request to Messaging API to reply to sender
