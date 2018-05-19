@@ -8,13 +8,13 @@ $a = [
   "fulfillmentMessages" => [
       [
         "card" => [
-          "title" => "card title",
-          "subtitle" => "card text",
-          "imageUri" => "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+          "title" => "โรงแรมตัวอย่าง",
+          "subtitle" => "ราคาเริ่มต้น 1,601 บาท",
+          "imageUri" => "https://tripmaster.co/upload/hotel/logo/1.jpg",
           "buttons" => [
             [
-              "text" => "button text",
-              "postback" => "https://assistant.google.com/"
+              "text" => "ดูห้องพัก ",
+              "postback" => "https://dummyhotel.online/"
             ]
           ]
         ]
