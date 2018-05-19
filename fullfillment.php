@@ -1,3 +1,4 @@
+<?
 header('Content-Type: application/json');
 
 $update_response = file_get_contents("php://input");
