@@ -8,7 +8,7 @@ $a = [
   "fulfillmentText" =>
     'คุณต้องการจองโรงแรม ' . $parameters['place'] .' วันที่ '.
     $parameters['date'] .' '. $parameters['room'] .' ห้อง '.
-    $parameters['night'] .' คืน ' ;
+    $parameters['night'] .' คืน '
 ];
 echo json_encode($a);
 ?>
