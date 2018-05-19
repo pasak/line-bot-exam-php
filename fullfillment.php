@@ -5,11 +5,20 @@ $update_response = file_get_contents("php://input");
 $update = json_decode($update_response, true);
 
 $a = [
-  "fulfillmentText" =>
-    'คุณต้องการจองโรงแรม ' . $update['queryResult']['parameters']['place']
-    .' วันที่ ' . $update['queryResult']['parameters']['date'] .' '.
-    $update['queryResult']['parameters']['room'] .' ห้อง '.
-    $update['queryResult']['parameters']['night'] .' คืน '
-];
+  "fulfillmentMessages" => [
+      [
+        "card" => [
+          "title" => "card title",
+          "subtitle" => "card text",
+          "imageUri" => "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+          "buttons" => [
+            [
+              "text" => "button text",
+              "postback" => "https://assistant.google.com/"
+            ]
+          ]
+        ]
+      ]
+    ]];
 echo json_encode($a);
 ?>
