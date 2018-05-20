@@ -14,8 +14,6 @@ $a = [
 ];
 */
 
-  "final_response'" => true,
-
   "fulfillmentMessages" => [
       [
         "card" => [
@@ -30,7 +28,10 @@ $a = [
           ]
         ]
       ]
-    ]];
+    ],
+
+  "final_response'" => true
+];
   
 echo json_encode($a);
 ?>
