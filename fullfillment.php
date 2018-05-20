@@ -28,10 +28,7 @@ $a = [
           ]
         ]
       ]
-    ],
-
-  "final_response'" => true
-];
+    ]];
   
 echo json_encode($a);
 ?>
