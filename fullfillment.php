@@ -13,29 +13,43 @@ $a = [
     $update['queryResult']['parameters']['night'] .' คืน '
 ];
 */
-  "fulfillmentMessages" => [
+    "fulfillmentMessages" => [
       [
         "card" => [
-          "title" => "โรงแรมตัวอย่าง",
-          "subtitle" => "ราคาเริ่มต้น 1,601 บาท",
-          "imageUri" => "https://tripmaster.co/upload/hotel/logo/1.jpg",
+          "title" => "card title",
+          "subtitle" => "card text",
+          "imageUri" => "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
           "buttons" => [
             [
-              "text" => "ดูห้องพัก ",
-              "postback" => "https://dummyhotel.online/"
+              "text" => "button text",
+              "postback" => "https://assistant.google.com/"
             ]
           ]
-        ],
-        "expect_user_response" => false,
-      	"final_response" =>
-      	[
-      		"speech_response" =>
-      		[
-      		"text_to_speech" => "Goodbye!"
-      		]
         ]
       ]
-    ]];
+    ],
+    "source" => "example.com",
+    "payload" => [
+      "google" => [
+        "expectUserResponse" => true,
+        "richResponse" => [
+          "items" => [
+            [
+              "simpleResponse" => [
+                "textToSpeech" => "this is a simple response"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "facebook" => [
+        "text" => "Hello, Facebook!"
+      ],
+      "slack" => [
+        "text" => "This is a text response for Slack."
+      ]
+    ]
+];
 
 echo json_encode($a);
 ?>
