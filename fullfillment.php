@@ -26,7 +26,14 @@ $a = [
             ]
           ]
         ],
-        "expectUserResponse" => false
+        "expect_user_response" => false,
+      	"final_response" =>
+      	[
+      		"speech_response" =>
+      		[
+      		"text_to_speech" => "Goodbye!"
+      		]
+        ]
       ]
     ]];
 
