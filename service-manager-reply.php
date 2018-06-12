@@ -22,14 +22,14 @@ if (!is_null($events['events'])) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
 
-      $url = 'https://tripmaster.co/line/service-manager-reply.php?Token=' . $access_token .
+      $url = 'https://tripmaster.co/chat/line/service-manager-reply.php?Token=' . $access_token .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] .
              '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] .
              '&Text=' . urlencode($event['message']['text']);
       $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
       $messages = json_decode($json,true);
-    $messages = array(['type' => 'text','text' => $url]);
+//     $messages = array(['type' => 'text','text' => $url]);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
       // Make a POST Request to Messaging API to reply to sender
