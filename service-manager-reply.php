@@ -3,7 +3,7 @@ require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 // $access_token = 'KYJc8n+UE8YPsIa2qDo5hVNQ0u2JQ1Cy4tEW1qIRg1i4r+bgoy/xfDfdXQypmoVaBmHixhavlpkc3b7KX+648A9Fu3DrdxX1NeoEzjU9uWqn9vFwwaoFkUlQlZEbJW3tR5jsg7UPa+wTuTxU/PAVTAdB04t89/1O/w1cDnyilFU=';
 
-$access_token = $_REQUEST['Token'];
+$access_token = str_replace(' ','+',$_REQUEST['Token']);
 
 $arrContextOptions=array(
       "ssl"=>array(
@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
              '&Text=' . urlencode($event['message']['text']);
       $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
       $messages = json_decode($json,true);
-//     $messages = array(['type' => 'text','text' => $url]);
+    $messages = array(['type' => 'text','text' => $url]);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
       // Make a POST Request to Messaging API to reply to sender
