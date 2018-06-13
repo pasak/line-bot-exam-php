@@ -2,7 +2,9 @@
 // require "vendor/autoload.php";
 // require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
-$access_token = '0zhyZeKzFbPrHc3wsukcNfHJngX61gJnyJBjCAMdiZGlro3eJFu3s4eP1FM3t9psiiHlnZYG2FgRgmgIOFMK0HiPcFTxXshD9eN3Ir+rNe1Cci10aV5Y1pDJPvBvPHoNKXDDxcQT9VXotv9vcpzoDgdB04t89/1O/w1cDnyilFU=';
+// $access_token = '0zhyZeKzFbPrHc3wsukcNfHJngX61gJnyJBjCAMdiZGlro3eJFu3s4eP1FM3t9psiiHlnZYG2FgRgmgIOFMK0HiPcFTxXshD9eN3Ir+rNe1Cci10aV5Y1pDJPvBvPHoNKXDDxcQT9VXotv9vcpzoDgdB04t89/1O/w1cDnyilFU=';
+
+$access_token = str_replace(' ','+',$_REQUEST['Token']);
 
 $arrContextOptions=array(
       "ssl"=>array(
@@ -23,7 +25,7 @@ if (!is_null($events['events'])) {
 
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
 
-      $url = 'https://tripmaster.co/line/tourist-reply.php?Token=ChIJy1naz5o62jARbsePVZKbV78' .
+      $url = 'https://tripmaster.co/line/tourist-reply.php?Token=' . $access_token . // ChIJy1naz5o62jARbsePVZKbV78' .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] .
              '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] .
