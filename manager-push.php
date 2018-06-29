@@ -1,7 +1,7 @@
 <?php
 $_return = array();
 
-$FieldArray = array('access_token','LineUserID','messages');
+$FieldArray = array('access_token','LineUserID'); //,'messages');
 
 foreach ($FieldArray as $Field)
   $_return[$Field] = $_REQUEST[$Field];
