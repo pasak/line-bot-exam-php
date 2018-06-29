@@ -22,7 +22,7 @@ $arrContextOptions=array(
 $post = file_get_contents($PostURL, false, stream_context_create($arrContextOptions));
 
 echo "<br><br>post $post";
-
+/*
 $url = 'https://api.line.me/v2/bot/message/push';
 
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -36,5 +36,5 @@ curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 $result = curl_exec($ch);
 curl_close($ch);
 
-echo "<br><br>result " $result . "\r\n";
+echo "<br><br>result " $result . "\r\n";*/
 ?>
