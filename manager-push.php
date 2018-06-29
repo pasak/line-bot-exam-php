@@ -1,8 +1,10 @@
 <?php
-$fp = fopen('php://input', 'r');
-$rawData = stream_get_contents($fp);
+$_return = array();
 
-echo "<pre>";
-print_r($rawData);
-echo "</pre>";
+$FieldArray = array('access_token','LineUserID','messages');
+
+foreach ($FieldArray as $Field)
+  $_return[$Field] = $_REQUEST[$Field];
+
+echo json_encode($_return,JSON_UNESCAPED_UNICODE);
 ?>
