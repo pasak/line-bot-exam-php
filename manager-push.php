@@ -3,19 +3,30 @@ $_return = array();
 
 $FieldArray = array('access_token','PostURL');
 
-foreach ($FieldArray as $Field)
-  $_return[$Field] = $_REQUEST[$Field];
+foreach ($FieldArray as $Field) {
+  ${$Field} = $_REQUEST[$Field];
 
-// $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
+  echo "<br><br>$Field ", ${$Field};
+}
+// echo json_encode($_return,JSON_UNESCAPED_UNICODE);
 
-echo json_encode($_return,JSON_UNESCAPED_UNICODE);
+$access_token = str_replace(' ','+',$access_token);
 
-// Make a POST Request to Messaging API to reply to sender
+$arrContextOptions=array(
+      "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+        ),
+    );
+
+$post = file_get_contents($PostURL, false, stream_context_create($arrContextOptions));
+
+echo "<br><br>post $post";
+
 $url = 'https://api.line.me/v2/bot/message/push';
 
-$post = file_get_contents($PostURL);
-
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
