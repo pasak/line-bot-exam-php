@@ -9,6 +9,7 @@ $arrContextOptions=array(
 $post = file_get_contents($_REQUEST['PostURL'], false, stream_context_create($arrContextOptions));
 
 $post = str_replace(' ','',$post);
+$post = str_replace('-',' ',$post);
 
 // echo "<br><br>post $post";
 
