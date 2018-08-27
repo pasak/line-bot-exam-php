@@ -26,7 +26,7 @@ if (!is_null($events['events'])) {
 
 	      $url = 'https://tripmaster.co/line/provider-reply.php?Token=' . $access_token .
 		     '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
-		     '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] .
+		     '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
 	      switch ($event['type']) {
 		case 'message':
