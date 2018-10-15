@@ -26,8 +26,20 @@ if (!is_null($events['events'])) {
 
       switch ($event['type']) {
         case 'message':
-          $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] .
-                  '&Text=' . urlencode($event['message']['text']);
+          $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
+
+          switch ($event['message']['type'] ) {
+            case 'location':
+              $url .= '&Title=' . urlencode($event['message']['title']) .
+                      '&Address' . urlencode($event['message']['address']) .
+                      '&Latitude' . $event['message']['latitude'] .
+                      '&Longitude' . $event['message']['longitude'] ;
+              break;
+
+            default:
+              $url .= '&Text=' . urlencode($event['message']['text']);
+              break;
+          }
           break;
 
         case 'beacon':
