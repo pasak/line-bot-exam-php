@@ -31,9 +31,9 @@ if (!is_null($events['events'])) {
           switch ($event['message']['type'] ) {
             case 'location':
               $url .= '&Title=' . urlencode($event['message']['title']) .
-                      '&Address' . urlencode($event['message']['address']) .
-                      '&Latitude' . $event['message']['latitude'] .
-                      '&Longitude' . $event['message']['longitude'] ;
+                      '&Location=' . urlencode($event['message']['address']) .
+                      '&Latitude=' . $event['message']['latitude'] .
+                      '&Longitude=' . $event['message']['longitude'] ;
               break;
 
             default:
