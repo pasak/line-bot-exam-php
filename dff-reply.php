@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
       if (in_array($event['type'], array('message','beacon'))) {
         $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
-        $messages = json_decode($json,true);
+        $messages = json_decode($json,true); 
 
         $messages = array(['type' => 'text','text' => $url]);
 
