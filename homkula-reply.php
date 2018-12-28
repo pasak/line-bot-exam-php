@@ -20,35 +20,14 @@ if (!is_null($events['events'])) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
 
-      $url = 'https://homekula.shop.linecommerce.co/lff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
+      $url = 'https://homkula.shop.linecommerce.co/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
-      switch ($event['type']) {
-        case 'message':
-          $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
+      $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
-          switch ($event['message']['type'] ) {
-            case 'location':
-              $url .= '&Title=' . urlencode($event['message']['title']) .
-                      '&Location=' . urlencode($event['message']['address']) .
-                      '&Latitude=' . $event['message']['latitude'] .
-                      '&Longitude=' . $event['message']['longitude'] ;
-              break;
+      $url .= '&Text=' . urlencode($event['message']['text']);
 
-            default:
-              $url .= '&Text=' . urlencode($event['message']['text']);
-              break;
-          }
-          break;
-
-        case 'beacon':
-          $url .= '&HWID=' . $event['beacon']['hwid'] . '&BeaconType=' . $event['beacon']['type'] .
-                  '&DM=' . urlencode($event['beacon']['dm']);
-          break;
-      }
-
-      if (in_array($event['type'], array('message','beacon'))) {
         $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
         $messages = json_decode($json,true);
@@ -75,7 +54,7 @@ if (!is_null($events['events'])) {
   			$result = curl_exec($ch);
   			curl_close($ch);
   			echo $result . "\r\n";
-		  } // if (in_array
+		  // } // if (in_array
 	} // foreach
 } // if (!is_null
 
