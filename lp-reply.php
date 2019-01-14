@@ -1,6 +1,4 @@
-<?php // callback.php
-// require "vendor/autoload.php";
-// require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
+<?php // dff-customer-reply.php
 $access_token = str_replace(' ','+',$_REQUEST['Token']);
 
 // echo '$access_token ', $access_token;
@@ -21,20 +19,26 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
+
       $url = 'https://lp.linebusticket.co/chat/member-reply.php?Token=' . $access_token .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
-             '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] .
-             '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] .
-             '&Text=' . urlencode($event['message']['text']);
-      $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
-      $messages = json_decode($json,true);
+             '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
-      $messages = array(['type' => 'text','text' => $url]);
-			// Get replyToken
-			$replyToken = $event['replyToken'];
-      // Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-      // foreach ($messages as $message) {
+      $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
+
+      $url .= '&Text=' . urlencode($event['message']['text']);
+
+        $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
+
+        $messages = json_decode($json,true);
+
+        $messages = array(['type' => 'text','text' => $url]);
+
+  			// Get replyToken
+  			$replyToken = $event['replyToken'];
+        // Make a POST Request to Messaging API to reply to sender
+  			$url = 'https://api.line.me/v2/bot/message/reply';
+
   			$data = [
   				'replyToken' => $replyToken,
   				'messages' => $messages,
@@ -50,8 +54,9 @@ if (!is_null($events['events'])) {
   			$result = curl_exec($ch);
   			curl_close($ch);
   			echo $result . "\r\n";
-		  // } // foreach ($messages
-	} // foreach ($events
-} // if
+		  // } // if (in_array
+	} // foreach
+} // if (!is_null
+
 echo "OK";
 ?>
