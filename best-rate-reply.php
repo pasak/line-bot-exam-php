@@ -28,8 +28,8 @@ if (!is_null($events['events'])) {
 
 //       $url .= '&Text=' . urlencode($event['message']['text']);
 
-      switch ($event['type']) {
-        case 'message':
+//       switch ($event['type']) {
+//         case 'message':
           $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
           switch ($event['message']['type'] ) {
@@ -44,7 +44,7 @@ if (!is_null($events['events'])) {
               $url .= '&Text=' . urlencode($event['message']['text']);
               break;
           }
-          break;
+/*          break;
 
         case 'beacon':
           $url .= '&HWID=' . $event['beacon']['hwid'] . '&BeaconType=' . $event['beacon']['type'] .
@@ -53,7 +53,7 @@ if (!is_null($events['events'])) {
       }
 
       if (in_array($event['type'], array('message','beacon'))) {
-
+*/
         $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
         $messages = json_decode($json,true);
@@ -80,7 +80,7 @@ if (!is_null($events['events'])) {
   			$result = curl_exec($ch);
   			curl_close($ch);
   			echo $result . "\r\n";
-		  } // if (in_array
+// 		  } // if (in_array
 	} // foreach
 } // if (!is_null
 
