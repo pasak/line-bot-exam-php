@@ -24,10 +24,10 @@ if (!is_null($events['events'])) {
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
-//       $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
+      $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
-//       $url .= '&Text=' . urlencode($event['message']['text']);
-
+      $url .= '&Text=' . urlencode($event['message']['text']);
+/*
       switch ($event['type']) {
         case 'message':
           $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
@@ -53,7 +53,7 @@ if (!is_null($events['events'])) {
       }
 
       if (in_array($event['type'], array('message','beacon'))) {
-
+*/
         $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
         $messages = json_decode($json,true);
@@ -80,7 +80,7 @@ if (!is_null($events['events'])) {
   			$result = curl_exec($ch);
   			curl_close($ch);
   			echo $result . "\r\n";
-		  } // if (in_array
+// 		  } // if (in_array
 	} // foreach
 } // if (!is_null
 
