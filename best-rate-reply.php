@@ -24,13 +24,13 @@ if (!is_null($events['events'])) {
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
-//       $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
+      $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
-//       $url .= '&Text=' . urlencode($event['message']['text']);
+      $url .= '&Text=' . urlencode($event['message']['text']);
 
 //       switch ($event['type']) {
 //         case 'message':
-          $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
+//           $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
 //           switch ($event['message']['type'] ) {
 //             case 'location':
@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 //               break;
 
 //             default:
-              $url .= '&Text=' . urlencode($event['message']['text']);
+//               $url .= '&Text=' . urlencode($event['message']['text']);
 //               break;
 //           }
 /*          break;
