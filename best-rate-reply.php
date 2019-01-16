@@ -26,24 +26,24 @@ if (!is_null($events['events'])) {
 
       $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
-      $url .= '&Text=' . urlencode($event['message']['text']);
+//       $url .= '&Text=' . urlencode($event['message']['text']);
 
 //       switch ($event['type']) {
 //         case 'message':
 //           $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
-//           switch ($event['message']['type'] ) {
-//             case 'location':
-/*              $url .= '&Title=' . urlencode($event['message']['title']) .
+          switch ($event['message']['type'] ) {
+            case 'location':
+              $url .= '&Title=' . urlencode($event['message']['title']) .
                       '&Location=' . urlencode($event['message']['address']) .
                       '&Latitude=' . $event['message']['latitude'] .
-                      '&Longitude=' . $event['message']['longitude'] ;*/
-//               break;
+                      '&Longitude=' . $event['message']['longitude'] ;
+              break;
 
-//             default:
-//               $url .= '&Text=' . urlencode($event['message']['text']);
-//               break;
-//           }
+            default:
+              $url .= '&Text=' . urlencode($event['message']['text']);
+              break;
+          }
 /*          break;
 
         case 'beacon':
