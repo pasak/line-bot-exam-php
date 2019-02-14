@@ -20,10 +20,11 @@ if (!is_null($events['events'])) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
 
-      $Team = (empty($_REQUEST['Team'])) ? '' : '/team/' . $_REQUEST['Team'] ;
-    
-      $url = "https://homkula.shop.linecommerce.co$Team/liff/" . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
-//       $url = 'https://homkula.shop.linecommerce.co/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
+//       $Team = (empty($_REQUEST['Team'])) ? '' : '/team/' . $_REQUEST['Team'] ;    
+//       $url = "https://homkula.shop.linecommerce.co$Team/liff/" . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
+
+	$url = 'https://homkula.shop.linecommerce.co/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
+	     '&Team=' . $_REQUEST['Team'] . 
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
