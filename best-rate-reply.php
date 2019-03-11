@@ -26,7 +26,7 @@ if (!is_null($events['events'])) {
 
       $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
-      $url .= '&Text=' . urlencode($event['message']['text']);
+//       $url .= '&Text=' . urlencode($event['message']['text']);
 
 //       switch ($event['type']) {
 //         case 'message':
