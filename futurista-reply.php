@@ -26,7 +26,18 @@ if (!is_null($events['events'])) {
 
       $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
 
-      $url .= '&Text=' . urlencode($event['message']['text']);
+      switch ($event['message']['type'] ) {
+        case 'location':
+          $url .= '&Title=' . urlencode($event['message']['title']) .
+                  '&Location=' . urlencode($event['message']['address']) .
+                  '&Latitude=' . $event['message']['latitude'] .
+                  '&Longitude=' . $event['message']['longitude'] ;
+          break;
+
+        default:
+          $url .= '&Text=' . urlencode($event['message']['text']);
+          break;
+      }
 
         $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
 
