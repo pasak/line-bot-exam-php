@@ -24,7 +24,8 @@ if (!is_null($events['events'])) {
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
-      $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] ;
+      $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=' . $event['message']['type'] .
+	      '&EventType=' . $event['type'] ;
 
       switch ($event['message']['type'] ) {
         case 'location':
