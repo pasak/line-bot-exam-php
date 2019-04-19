@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 //       $Team = (empty($_REQUEST['Team'])) ? '' : '/team/' . $_REQUEST['Team'] ;    
 //       $url = "https://homkula.shop.linecommerce.co$Team/liff/" . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
 
-	$url = 'https://homkula.shop.linecommerce.co/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
+	$url = 'https://homkula.shop/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
 	     '&Team=' . $_REQUEST['Team'] . 
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
