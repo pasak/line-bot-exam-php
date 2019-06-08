@@ -1,5 +1,5 @@
 <?php // dff-customer-reply.php
-$access_token = str_replace(' ','+',$_REQUEST['Token']);
+// $access_token = str_replace(' ','+',$_REQUEST['Token']);
 
 // echo '$access_token ', $access_token;
 
@@ -20,7 +20,8 @@ if (!is_null($events['events'])) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
 
-      $url = 'https://smile.linebooking.co/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
+      // $url = 'https://smile.linebooking.co/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
+      $url = 'https://smile.linebooking.co/liff/' . $_REQUEST['Group'] . '-reply.php?' .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
