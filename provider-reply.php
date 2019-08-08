@@ -41,9 +41,9 @@ if (!is_null($events['events'])) {
 	      }
 
 	      if (in_array($event['type'], array('message','beacon'))) {
-		      $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
-		      $messages = json_decode($json,true);
-// 		      $messages = array(['type' => 'text','text' => $url]);
+// 		      $json = file_get_contents($url, false, stream_context_create($arrContextOptions));
+// 		      $messages = json_decode($json,true);
+		      $messages = array(['type' => 'text','text' => $url]);
 					// Get replyToken
 					$replyToken = $event['replyToken'];
 		      // Make a POST Request to Messaging API to reply to sender
