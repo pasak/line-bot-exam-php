@@ -31,8 +31,10 @@ if (!is_null($events['events'])) {
           break;
 
         case 'beacon':
-          $url .= '&HWID=' . $event['beacon']['hwid'] . '&BeaconType=' . $event['beacon']['type'] .
-                  '&DM=' . urlencode($event['beacon']['dm']);
+//           $url .= '&HWID=' . $event['beacon']['hwid'] . '&BeaconType=' . $event['beacon']['type'] .
+//                   '&DM=' . urlencode($event['beacon']['dm']);
+
+	  $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=beacon&Text=' . $event['beacon']['type'] ;
           break;
       }
 
@@ -41,7 +43,7 @@ if (!is_null($events['events'])) {
 
         $messages = json_decode($json,true);
 
-//         $messages = array(['type' => 'text','text' => $url]);
+        $messages = array(['type' => 'text','text' => $url]);
 
         // $messages = array(['type' => 'text','text' => $access_token]);
 
