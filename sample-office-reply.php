@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 //           $url .= '&HWID=' . $event['beacon']['hwid'] . '&BeaconType=' . $event['beacon']['type'] .
 //                   '&DM=' . urlencode($event['beacon']['dm']);
 
-	  $url .= '&MessageID=' . $event['message']['id'] . '&MessageType=beacon&Text=' . $event['beacon']['type'] ;
+	  $url .= '&MessageType=beacon&Text=' . $event['beacon']['type'] ;
           break;
       }
 
