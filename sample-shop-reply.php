@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
       if ($event['source']['type'] == 'user') $ParentID = '' ;
       else $ParentID = ($event['source']['type'] == 'group') ? $event['source']['groupId'] : $event['source']['roomId'] ;
 
-      $url = 'https://sample.shop.linecommerce.tripmster.co/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
+      $url = 'https://sample.shop.linecommerce.tripmaster.co/liff/' . $_REQUEST['Group'] . '-reply.php?Token=' . $access_token .
              '&SourceType=' . $event['source']['type'] . '&ParentID=' . $ParentID .
              '&UserID='. $event['source']['userId'] . '&ReplyToken=' . $event['replyToken'] ;
 
@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 
         $messages = json_decode($json,true);
 
-        $messages = array(['type' => 'text','text' => $url]);
+//         $messages = array(['type' => 'text','text' => $url]);
 
   			// Get replyToken
   			$replyToken = $event['replyToken'];
