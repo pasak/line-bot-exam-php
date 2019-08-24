@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 
         $messages = json_decode($json,true);
 
-//         $messages = array(['type' => 'text','text' => $url]);
+        $messages = array(['type' => 'text','text' => $url]);
 
   			// Get replyToken
   			$replyToken = $event['replyToken'];
